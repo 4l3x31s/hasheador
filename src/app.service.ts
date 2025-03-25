@@ -20,12 +20,13 @@ export class AppService {
       const hash = crypto.createHash('md5').update(fileBuffer).digest('hex');
 
       return {
-        Num: parseInt(filename.split(' ')[0]),
+        No: parseInt(filename.split(' ')[0]),
         Documento: filename,
         TamañoEnBytes: stats.size,
         FechaUltimaModificacion: stats.mtime,
         CodigoHash: hash,
         Algoritmo: 'MD5',
+        RutaAcceso: `CD/no editable`,
       };
     });
 
